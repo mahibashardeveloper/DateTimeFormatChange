@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="content">
+        <div>
+            You can format date in below structure
+            <ul id="formatOptions">
+                <li>YYYY-MM-DD</li>
+                <li>MM-DD-YYYY</li>
+                <li>DD-MM-YYYY</li>
+            </ul>
+        </div>
+        <div id="output"></div>
+    </div>
+
+<script src="jqPlugin.js"></script>
+
+
+<script>
+
+    setInterval(function(){
+        $("#output").html($("#inputDate").formatDate("MM-DD-YYYY"));
+    }, 1000);
+
+    $("#formatOptions li").click(function() {
+        $("#inputDate").formatDate($(this).text());
+        $("#output").html($("#inputDate").formatDate($(this).text()));
+    });
+
+</script>
+
+</body>
+</html>
+
